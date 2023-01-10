@@ -56,11 +56,25 @@ public class Student {
             }
         }
     }
-    public void add(List<Student> students){
+    public static Student add(){
         Random random = new Random();
-        int
+        int u = random.nextInt(1,15);
+        String name = "Student" + u;
+        int r = random.nextInt(1,3);
+        int t = random.nextInt(1,5);
+        int y = random.nextInt(1,3);
+        Student student = new Student(name,r,t,y);
 
-//        Student student = new Student();
+        return student;
+    }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", group=" + group +
+                ", course=" + course +
+                ", rating=" + rating +
+                '}';
     }
 }
