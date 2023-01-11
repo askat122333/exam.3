@@ -10,5 +10,12 @@ public class Main {
            students.add(Student.add());
         }
         System.out.println(students);
+        System.out.println("______________________________");
+        Student.delete(students);
+        System.out.println("______________________________");
+        System.out.println(students);
+        System.out.println("______________________________");
+        Student.printStudents(students,3);
+
     }
 }

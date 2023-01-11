@@ -49,9 +49,10 @@ public class Student {
         this.rating = rating;
     }
 
-    public void delete(List<Student> students){
+    public static void delete(List<Student> students){
         for (int i = 0; i < students.size(); i++) {
-            if (students.get(i) != null && students.get(i).getRating() < 3) {
+            if (students.get(i).getRating() < 3) {
+                System.out.println(students.get(i).getName()+ " Не проходит на следующий курс");
                 students.remove(students.get(i));
             }
         }
@@ -62,10 +63,16 @@ public class Student {
         String name = "Student" + u;
         int r = random.nextInt(1,3);
         int t = random.nextInt(1,5);
-        int y = random.nextInt(1,3);
+        int y = random.nextInt(2,5);
         Student student = new Student(name,r,t,y);
-
         return student;
+    }
+    public static void printStudents (List<Student> students,int course) {
+        for (int i = 0; i < students.size(); i++) {
+            if (students.get(i).getCourse() == course) {
+                System.out.println(students.get(i).getName());
+            }
+        }
     }
 
     @Override
@@ -75,6 +82,6 @@ public class Student {
                 ", group=" + group +
                 ", course=" + course +
                 ", rating=" + rating +
-                '}';
+                '}'+"\n";
     }
 }
